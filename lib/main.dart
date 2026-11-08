@@ -197,7 +197,7 @@ class CustomTaskCard extends StatelessWidget {
         side: const BorderSide(color: Color(0xFFCBD5E1)),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
         child: Row(
           children: [
             Checkbox(
@@ -208,12 +208,15 @@ class CustomTaskCard extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     task.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.w600,
                       decoration: task.isCompleted
                           ? TextDecoration.lineThrough
@@ -223,14 +226,17 @@ class CustomTaskCard extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     '${task.subject} • ${task.studentEmail}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 13,
+                      fontSize: 12,
                       color: Color(0xFF64748B),
                     ),
                   ),
                 ],
               ),
             ),
+            const SizedBox(width: 8),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
@@ -529,7 +535,7 @@ class _HomeScreenState extends State<HomeScreen>
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisExtent: 96,
+                          mainAxisExtent: 108,
                           crossAxisSpacing: 12,
                           mainAxisSpacing: 8,
                         ),
