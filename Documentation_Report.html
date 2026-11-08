@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flutter End Semester Project Documentation Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+    body {
+      font-family: "Times New Roman", Georgia, serif;
+      color: #000000;
+      background: #ffffff;
+      line-height: 1.38;
+      font-size: 11pt;
+      margin: 0;
+      padding: 0;
+    }
+    .title-header {
+      text-align: center;
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    .title-header h1 {
+      font-size: 18pt;
+      margin: 0 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .title-header p {
+      margin: 2px 0;
+      font-size: 10.5pt;
+    }
+    h2 {
+      font-size: 13pt;
+      border-bottom: 1px solid #000;
+      padding-bottom: 2px;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 11pt;
+      margin-top: 10px;
+      margin-bottom: 3px;
+      page-break-after: avoid;
+    }
+    p, li {
+      text-align: justify;
+      margin-top: 3px;
+      margin-bottom: 5px;
+    }
+    ul, ol {
+      margin-top: 3px;
+      margin-bottom: 6px;
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 10pt;
+    }
+    tr {
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 5px 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #efefef;
+      font-weight: bold;
+    }
+    pre {
+      background-color: #f7f7f7;
+      border: 1px solid #333;
+      padding: 6px 8px;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 8.5pt;
+      line-height: 1.25;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      page-break-inside: avoid;
+      margin: 4px 0 8px 0;
+    }
+    .screenshot-grid {
+      display: block;
+    }
+    .screenshot-box {
+      border: 1px solid #000;
+      padding: 6px;
+      margin: 8px 0;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+    .screenshot-box img {
+      max-width: 95%;
+      max-height: 250px;
+      border: 1px solid #666;
+    }
+    .caption {
+      font-size: 9.5pt;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title-header">
+    <h1>Flutter Application Documentation Report</h1>
+    <p><strong>Project Title:</strong> Student Study &amp; Task Hub</p>
+    <p><strong>Live Deployed URL:</strong> https://nishulucyna.github.io/student_study_hub/</p>
+    <p><strong>GitHub Repository:</strong> https://github.com/nishulucyna/student_study_hub</p>
+  </div>
+
+  <h2>1. Application Name and Introduction</h2>
+  <p>
+    <strong>Application Name:</strong> Student Study &amp; Task Hub<br>
+    <strong>Introduction:</strong> Student Study &amp; Task Hub is a clean, lightweight, cross-platform web and mobile application built using the Flutter framework and Dart programming language. It enables students to organize academic study tasks, track completion progress, validate task inputs through interactive forms, and fetch live motivational study quotes from a REST API. The application is architected to demonstrate all ten core laboratory experiments in the Flutter curriculum within a cohesive, easy-to-navigate user interface.
+  </p>
+
+  <h2>2. Purpose and Objectives of the Application</h2>
+  <p>
+    The primary purpose of the application is to provide students with a centralized academic task planner while demonstrating industry-standard Flutter development practices. The specific objectives are:
+  </p>
+  <ul>
+    <li>To implement foundational Flutter UI widgets (<code>Text</code>, <code>Image</code>, <code>Container</code>) and layout structures (<code>Row</code>, <code>Column</code>, <code>Stack</code>).</li>
+    <li>To design an adaptive, responsive user interface using <code>MediaQuery</code> and screen width breakpoints (<code>700px</code>) that dynamically switches between a multi-column desktop grid and a single-column mobile list.</li>
+    <li>To configure multi-screen navigation using <code>Navigator</code> and named routes (<code>/</code>, <code>/add-task</code>, <code>/api-quotes</code>).</li>
+    <li>To manage application state using both local state (<code>StatefulWidget</code> and <code>setState</code>) and global state management (<code>Provider</code> and <code>ChangeNotifier</code>).</li>
+    <li>To build reusable custom widgets (<code>CustomTaskCard</code>) and apply custom Light/Dark themes (<code>ThemeData</code>).</li>
+    <li>To design an interactive form with input validation and error handling using <code>Form</code>, <code>GlobalKey&lt;FormState&gt;</code>, <code>TextFormField</code>, and <code>DropdownButtonFormField</code>.</li>
+    <li>To enhance user experience with explicit and implicit animations (<code>AnimationController</code>, <code>FadeTransition</code>, <code>SlideTransition</code>, and <code>AnimatedContainer</code>).</li>
+    <li>To asynchronously fetch and parse JSON data from a live REST API using the <code>http</code> package and <code>FutureBuilder</code>, and verify component reliability through automated unit and widget tests.</li>
+  </ul>
+
+  <h2>3. Tools and Technologies Used</h2>
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Tool / Technology</th>
+      <th>Purpose in Project</th>
+    </tr>
+    <tr>
+      <td>Framework &amp; SDK</td>
+      <td>Flutter SDK (Stable 3.x)</td>
+      <td>Cross-platform UI toolkit for building the responsive Web application.</td>
+    </tr>
+    <tr>
+      <td>Programming Language</td>
+      <td>Dart (SDK &gt;=3.0.0 &lt;4.0.0)</td>
+      <td>Object-oriented language used for UI components, state logic, and async API calls.</td>
+    </tr>
+    <tr>
+      <td>State Management</td>
+      <td><code>provider</code> (^6.1.2)</td>
+      <td>Reactive state management using <code>ChangeNotifier</code> and <code>ChangeNotifierProvider</code>.</td>
+    </tr>
+    <tr>
+      <td>Networking / API</td>
+      <td><code>http</code> (^1.2.1) &amp; <code>dart:convert</code></td>
+      <td>Performing HTTP GET requests and decoding JSON payloads from DummyJSON REST API.</td>
+    </tr>
+    <tr>
+      <td>Testing Framework</td>
+      <td><code>flutter_test</code></td>
+      <td>Executing automated unit tests for <code>TaskProvider</code> and widget tests for UI &amp; forms.</td>
+    </tr>
+    <tr>
+      <td>CI/CD &amp; Hosting</td>
+      <td>GitHub Actions &amp; GitHub Pages</td>
+      <td>Automated testing, release web build, and hosting on the <code>gh-pages</code> branch.</td>
+    </tr>
+  </table>
+
+  <h2>4. Features and Functionalities Implemented (Mapped to Syllabus)</h2>
+  <table>
+    <tr>
+      <th>Exp</th>
+      <th>Syllabus Topic</th>
+      <th>Implementation in Student Study &amp; Task Hub</th>
+    </tr>
+    <tr>
+      <td>Exp 1</td>
+      <td>Flutter SDK &amp; Dart Basics</td>
+      <td>Implemented <code>lib/dart_basics.dart</code> and the <code>StudyTask</code> model class demonstrating classes, constructors, lists, maps, functions, and null safety.</td>
+    </tr>
+    <tr>
+      <td>Exp 2</td>
+      <td>Widgets &amp; Layouts (Row, Column, Stack)</td>
+      <td>Dashboard header banner uses <code>Stack</code> with a positioned badge overlay, <code>Container</code>, <code>Image.network</code>, <code>Row</code>, <code>Column</code>, and <code>Text</code> widgets.</td>
+    </tr>
+    <tr>
+      <td>Exp 3</td>
+      <td>Responsive UI &amp; MediaQuery Breakpoints</td>
+      <td>Uses <code>MediaQuery.of(context).size.width</code> with a <code>700px</code> breakpoint to switch between a 2-column <code>GridView</code> on desktop and a 1-column <code>ListView</code> on mobile.</td>
+    </tr>
+    <tr>
+      <td>Exp 4</td>
+      <td>Navigation &amp; Named Routes</td>
+      <td>Configured named routes (<code>/</code>, <code>/add-task</code>, <code>/api-quotes</code>) in <code>MaterialApp</code> and navigated via <code>Navigator.pushNamed()</code> and <code>Navigator.pop()</code>.</td>
+    </tr>
+    <tr>
+      <td>Exp 5</td>
+      <td>Stateless/Stateful Widgets, setState &amp; Provider</td>
+      <td>Global task list and theme state managed by <code>TaskProvider</code> (<code>ChangeNotifier</code>); local UI state for dropdowns and animation banner managed via <code>setState()</code>.</td>
+    </tr>
+    <tr>
+      <td>Exp 6</td>
+      <td>Custom Widgets &amp; Themes</td>
+      <td>Created reusable <code>CustomTaskCard</code> widget with priority color badges and configured custom Light and Dark <code>ThemeData</code> with Material 3 styling.</td>
+    </tr>
+    <tr>
+      <td>Exp 7</td>
+      <td>Form Design, Validation &amp; Error Handling</td>
+      <td>Built <code>AddTaskScreen</code> with <code>GlobalKey&lt;FormState&gt;</code>, three validated <code>TextFormField</code> inputs (Title, Subject, Email), and a <code>DropdownButtonFormField</code>.</td>
+    </tr>
+    <tr>
+      <td>Exp 8</td>
+      <td>Flutter Animation Framework</td>
+      <td>Implemented explicit animations (<code>AnimationController</code>, <code>FadeTransition</code>, <code>SlideTransition</code>) and implicit animation (<code>AnimatedContainer</code>).</td>
+    </tr>
+    <tr>
+      <td>Exp 9</td>
+      <td>Fetch Data from REST API</td>
+      <td><code>ApiQuotesScreen</code> fetches JSON quotes from <code>https://dummyjson.com/quotes?limit=6</code> using <code>http.get</code> and renders them with <code>FutureBuilder</code>.</td>
+    </tr>
+    <tr>
+      <td>Exp 10</td>
+      <td>Unit Tests &amp; Debugging</td>
+      <td>Created unit and widget tests in <code>test/widget_test.dart</code> and resolved a <code>RenderFlex</code> overflow in <code>GridView</code> using Flutter layout constraints.</td>
+    </tr>
+  </table>
+
+  <h2>5. Important Code Snippets</h2>
+
+  <h3>5.1 State Management with Provider (Exp 5)</h3>
+  <pre>class TaskProvider extends ChangeNotifier {
+  final List&lt;StudyTask&gt; _tasks = [ /* Initial Tasks */ ];
+  List&lt;StudyTask&gt; get tasks =&gt; List.unmodifiable(_tasks);
+
+  void addTask({required String title, required String subject,
+                required String priority, required String email}) {
+    _tasks.insert(0, StudyTask(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      title: title, subject: subject, priority: priority, studentEmail: email,
+    ));
+    notifyListeners();
+  }
+
+  void toggleTaskStatus(String id) {
+    final index = _tasks.indexWhere((t) =&gt; t.id == id);
+    if (index != -1) {
+      _tasks[index].isCompleted = !_tasks[index].isCompleted;
+      notifyListeners();
+    }
+  }
+}</pre>
+
+  <h3>5.2 Named Routes &amp; Theme Configuration (Exp 4 &amp; Exp 6)</h3>
+  <pre>MaterialApp(
+  title: 'Student Study &amp; Task Hub',
+  themeMode: taskProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+  theme: ThemeData(
+    useMaterial3: true,
+    colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1E3A8A)),
+  ),
+  routes: {
+    '/': (context) =&gt; const HomeScreen(),
+    '/add-task': (context) =&gt; const AddTaskScreen(),
+    '/api-quotes': (context) =&gt; const ApiQuotesScreen(),
+  },
+);</pre>
+
+  <h3>5.3 Responsive UI with MediaQuery Breakpoint (Exp 3)</h3>
+  <pre>final double screenWidth = MediaQuery.of(context).size.width;
+final bool isWideScreen = screenWidth &gt; 700;
+
+isWideScreen
+  ? GridView.builder(
+      shrinkWrap: true,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, mainAxisExtent: 108, crossAxisSpacing: 12, mainAxisSpacing: 8,
+      ),
+      itemCount: provider.tasks.length,
+      itemBuilder: (ctx, i) =&gt; CustomTaskCard(task: provider.tasks[i], ...),
+    )
+  : ListView.builder(
+      shrinkWrap: true,
+      itemCount: provider.tasks.length,
+      itemBuilder: (ctx, i) =&gt; CustomTaskCard(task: provider.tasks[i], ...),
+    );</pre>
+
+  <h3>5.4 Form Validation &amp; Error Handling (Exp 7)</h3>
+  <pre>final _formKey = GlobalKey&lt;FormState&gt;();
+
+TextFormField(
+  controller: _emailController,
+  decoration: const InputDecoration(labelText: 'Student Email', border: OutlineInputBorder()),
+  validator: (value) {
+    if (value == null || value.trim().isEmpty) return 'Email address is required';
+    if (!value.contains('@') || !value.contains('.')) return 'Enter a valid email address';
+    return null;
+  },
+);
+
+void _submitForm() {
+  if (_formKey.currentState!.validate()) {
+    context.read&lt;TaskProvider&gt;().addTask(...);
+    Navigator.pop(context);
+  }
+}</pre>
+
+  <h3>5.5 Fetching Data from REST API &amp; Unit Testing (Exp 9 &amp; Exp 10)</h3>
+  <pre>Future&lt;List&lt;Map&lt;String, String&gt;&gt;&gt; _fetchStudyQuotes() async {
+  final response = await http.get(Uri.parse('https://dummyjson.com/quotes?limit=6'));
+  if (response.statusCode == 200) {
+    final data = jsonDecode(response.body);
+    return (data['quotes'] as List).map((item) =&gt; {
+      'quote': item['quote'].toString(),
+      'author': item['author'].toString(),
+    }).toList();
+  }
+  throw Exception('Failed to load quotes');
+}</pre>
+
+  <h2>6. Deployment Details</h2>
+  <p>
+    The application is deployed to <strong>GitHub Pages</strong> using an automated <strong>GitHub Actions CI/CD workflow</strong> (<code>.github/workflows/deploy.yml</code>), following the exact deployment procedure used for the internal assessment:
+  </p>
+  <ol>
+    <li><strong>Source Control:</strong> Source code is pushed to the <code>main</code> branch of the public GitHub repository (<code>https://github.com/nishulucyna/student_study_hub</code>).</li>
+    <li><strong>Continuous Integration (CI):</strong> On every push to <code>main</code>, GitHub Actions provisions an <code>ubuntu-latest</code> runner, sets up Java 17 and Flutter Stable via <code>subosito/flutter-action@v2</code>, installs dependencies with <code>flutter pub get</code>, and executes automated unit and widget tests using <code>flutter test</code>.</li>
+    <li><strong>Web Release Build:</strong> The workflow compiles the production web bundle using: <code>flutter build web --base-href "/student_study_hub/" --release</code></li>
+    <li><strong>GitHub Pages Deployment (CD):</strong> The <code>JamesIves/github-pages-deploy-action@v4</code> action publishes the generated <code>build/web</code> folder to the <code>gh-pages</code> branch.</li>
+    <li><strong>Live URL:</strong> Accessible globally at <strong>https://nishulucyna.github.io/student_study_hub/</strong>.</li>
+  </ol>
+
+  <h2>7. Screenshots of the Application (UI Output)</h2>
+
+  <div class="screenshot-box">
+    <img src="screenshots/1_desktop_home.png" alt="Desktop Home Screen">
+    <div class="caption">Figure 1: Home Dashboard in Desktop Responsive Mode (&gt;700px 2-Column Grid, Stack Banner, Custom Task Cards)</div>
+  </div>
+
+  <div class="screenshot-box">
+    <img src="screenshots/2_mobile_responsive.png" alt="Mobile Responsive Screen">
+    <div class="caption">Figure 2: Home Dashboard in Mobile Responsive Mode (&lt;=700px Single-Column List via MediaQuery Breakpoint)</div>
+  </div>
+
+  <div class="screenshot-box">
+    <img src="screenshots/3_add_task_form.png" alt="Add Task Form Screen">
+    <div class="caption">Figure 3: Add Study Task Screen Demonstrating Form Input Fields, Dropdown, and Validation (Named Route: /add-task)</div>
+  </div>
+
+  <div class="screenshot-box">
+    <img src="screenshots/4_api_quotes.png" alt="REST API Quotes Screen">
+    <div class="caption">Figure 4: REST API Screen Displaying Live Motivational Quotes Fetched via HTTP GET (Named Route: /api-quotes)</div>
+  </div>
+
+</body>
+</html>
