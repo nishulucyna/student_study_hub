@@ -196,7 +196,7 @@ class CustomTaskCard extends StatelessWidget {
         side: const BorderSide(color: Color(0xFF94A3B8)),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetricsymmetric(horizontal: 12.0, vertical: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
         child: Row(
           children: [
             Checkbox(
@@ -215,7 +215,7 @@ class CustomTaskCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 1515,
+                      fontSize: 15,
                       fontWeight: FontWeight.w600,
                       decoration: task.isCompleted
                           ? TextDecoration.lineThrough
@@ -228,7 +228,7 @@ class CustomTaskCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 1212,
+                      fontSize: 12,
                       color: Color(0xFF475569),
                     ),
                   ),
@@ -534,7 +534,7 @@ class _HomeScreenState extends State<HomeScreen>
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisExtent: 108108,
+                          mainAxisExtent: 108,
                           crossAxisSpacing: 12,
                           mainAxisSpacing: 8,
                         ),
