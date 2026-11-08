@@ -151,7 +151,6 @@ class StudyHubApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
         '/add-task': (context) => const AddTaskScreen(),
@@ -194,10 +193,10 @@ class CustomTaskCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
-        side: const BorderSide(color: Color(0xFFCBD5E1)),
+        side: const BorderSide(color: Color(0xFF94A3B8)),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+        padding: const EdgeInsets.symmetricsymmetric(horizontal: 12.0, vertical: 10.0),
         child: Row(
           children: [
             Checkbox(
@@ -216,7 +215,7 @@ class CustomTaskCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 1515,
                       fontWeight: FontWeight.w600,
                       decoration: task.isCompleted
                           ? TextDecoration.lineThrough
@@ -229,8 +228,8 @@ class CustomTaskCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFF64748B),
+                      fontSize: 1212,
+                      color: Color(0xFF475569),
                     ),
                   ),
                 ],
@@ -289,21 +288,20 @@ class _HomeScreenState extends State<HomeScreen>
     // EXP 8(a) & 8(b): Explicit Fade and Slide Animations
     _animController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 500),
+      value: 1.0,
     );
     _fadeAnimation = CurvedAnimation(
       parent: _animController,
       curve: Curves.easeIn,
     );
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.08),
+      begin: const Offset(0, 0.06),
       end: Offset.zero,
     ).animate(CurvedAnimation(
       parent: _animController,
       curve: Curves.easeOut,
     ));
-
-    _animController.forward();
   }
 
   @override
@@ -353,7 +351,7 @@ class _HomeScreenState extends State<HomeScreen>
                           width: double.infinity,
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF1E293B),
+                            color: const Color(0xFF0F172A),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Row(
@@ -395,7 +393,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     Text(
                                       'Total Tasks: ${provider.tasks.length}  |  Completed: ${provider.completedCount}  |  Pending: ${provider.pendingCount}',
                                       style: const TextStyle(
-                                        color: Color(0xFFCBD5E1),
+                                        color: Color(0xFFE2E8F0),
                                         fontSize: 14,
                                       ),
                                     ),
@@ -458,10 +456,11 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                         OutlinedButton.icon(
                           onPressed: () {
-                            // EXP 5(b) & EXP 8: setState + AnimatedContainer toggle
+                            // EXP 5(b) & EXP 8: setState + Fade/Slide + AnimatedContainer
                             setState(() {
                               _isBannerExpanded = !_isBannerExpanded;
                             });
+                            _animController.forward(from: 0.0);
                           },
                           icon: const Icon(Icons.animation),
                           label: const Text('Toggle Animation Demo'),
@@ -483,7 +482,7 @@ class _HomeScreenState extends State<HomeScreen>
                         border: Border.all(
                           color: _isBannerExpanded
                               ? const Color(0xFF2563EB)
-                              : const Color(0xFFCBD5E1),
+                              : const Color(0xFF94A3B8),
                         ),
                       ),
                       child: Row(
@@ -535,7 +534,7 @@ class _HomeScreenState extends State<HomeScreen>
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisExtent: 108,
+                          mainAxisExtent: 108108,
                           crossAxisSpacing: 12,
                           mainAxisSpacing: 8,
                         ),
@@ -637,7 +636,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   const SizedBox(height: 6),
                   const Text(
                     'Demonstrates Form, TextFormField, DropdownButtonFormField, and Validation (Exp 7).',
-                    style: TextStyle(color: Color(0xFF64748B)),
+                    style: TextStyle(color: Color(0xFF475569)),
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
@@ -811,7 +810,7 @@ class _ApiQuotesScreenState extends State<ApiQuotesScreen> {
                 const SizedBox(height: 4),
                 const Text(
                   'Endpoint: GET https://dummyjson.com/quotes?limit=6',
-                  style: TextStyle(fontSize: 13, color: Color(0xFF64748B)),
+                  style: TextStyle(fontSize: 13, color: Color(0xFF475569)),
                 ),
                 const SizedBox(height: 16),
                 Expanded(
