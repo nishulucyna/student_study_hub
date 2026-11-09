@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Answer Booklet Notes</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 8mm 12mm;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      line-height: 1.25;
+      font-size: 8.8pt;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      border-bottom: 2px solid #222;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+    }
+    .header h1 {
+      font-size: 14pt;
+      margin: 0 0 2px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header p {
+      margin: 1px 0;
+      font-size: 8.5pt;
+      color: #333;
+    }
+    .box {
+      border: 1px solid #999;
+      border-left: 4px solid #1E3A8A;
+      background: #fafafa;
+      padding: 4px 7px;
+      margin-bottom: 5px;
+      border-radius: 3px;
+    }
+    .box h2 {
+      margin: 0 0 2px 0;
+      font-size: 9.8pt;
+      color: #1E3A8A;
+      text-transform: uppercase;
+    }
+    .box p {
+      margin: 2px 0;
+    }
+    ul {
+      margin: 2px 0;
+      padding-left: 16px;
+    }
+    li {
+      margin-bottom: 1px;
+    }
+    code {
+      font-family: Consolas, monospace;
+      background: #eee;
+      padding: 0 3px;
+      border-radius: 2px;
+      font-size: 8.2pt;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 8pt;
+      color: #555;
+      margin-top: 4px;
+      border-top: 1px dashed #aaa;
+      padding-top: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Exam Answer Booklet - Quick Writing Guide</h1>
+    <p><strong>Student:</strong> Anish Katta &nbsp;|&nbsp; <strong>Roll No:</strong> 24XV1M7607 &nbsp;|&nbsp; <strong>Branch:</strong> CS AM</p>
+    <p><strong>Project:</strong> Student Study &amp; Task Hub &nbsp;|&nbsp; <strong>Live URL:</strong> https://nishulucyna.github.io/student_study_hub/</p>
+  </div>
+
+  <div class="box">
+    <h2>1. Application Name &amp; What It Does</h2>
+    <p><strong>Name:</strong> Student Study &amp; Task Hub</p>
+    <p><strong>What it does:</strong> A clean Flutter web application that helps students track study tasks. Students can view tasks, mark them complete, add new tasks through a validated input form, toggle Light/Dark themes, and load motivational study quotes from a REST API.</p>
+  </div>
+
+  <div class="box">
+    <h2>2. Purpose &amp; Objectives</h2>
+    <p>To provide a simple, distraction-free study organizer while covering all syllabus lab topics:</p>
+    <ul>
+      <li>Basic UI widgets and layouts (Row, Column, Stack)</li>
+      <li>Responsive design adapting between mobile and desktop screens</li>
+      <li>Multi-screen navigation using named routes</li>
+      <li>State management using <code>setState</code> and <code>Provider</code></li>
+      <li>Form validation and error handling</li>
+      <li>UI animations (fade, slide, and animated container)</li>
+      <li>Fetching data asynchronously from a REST API using <code>http</code></li>
+      <li>Unit and widget testing for verification</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>3. Tools &amp; Technologies Used</h2>
+    <ul>
+      <li><strong>Flutter SDK &amp; Dart:</strong> For developing the cross-platform UI and logic.</li>
+      <li><strong>Provider Package:</strong> For app-wide state management (task list and theme).</li>
+      <li><strong>HTTP Package:</strong> To fetch data asynchronously from a REST API.</li>
+      <li><strong>Flutter Test:</strong> For automated unit and widget testing.</li>
+      <li><strong>GitHub Actions &amp; GitHub Pages:</strong> For automated CI/CD build and free web hosting.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>4. Major Features Implemented</h2>
+    <ul>
+      <li><strong>Responsive UI:</strong> Uses <code>MediaQuery</code>. On wide screens (&gt;700px), tasks show in a 2-column Grid; on mobile, in a 1-column List.</li>
+      <li><strong>Multi-Screen Navigation:</strong> Configured named routes (<code>/</code>, <code>/add-task</code>, <code>/api-quotes</code>) using <code>Navigator.pushNamed</code>.</li>
+      <li><strong>Form Validation:</strong> Validates that title, subject, and email are not empty and email has valid format (<code>@</code>, <code>.</code>).</li>
+      <li><strong>REST API Integration:</strong> Fetches live quotes from <code>https://dummyjson.com/quotes?limit=6</code> using <code>FutureBuilder</code>.</li>
+      <li><strong>Animations:</strong> Smooth entry fade/slide transitions and an animated expanding banner.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>5. How It Was Developed &amp; Deployed</h2>
+    <ul>
+      <li><strong>Development:</strong> Built with modular screens (Home, Add Task, Quotes) and a custom reusable task card widget. Tested with <code>flutter test</code>.</li>
+      <li><strong>Deployment:</strong> Pushed to GitHub. A GitHub Actions workflow runs tests, builds the web bundle (<code>flutter build web --base-href "/student_study_hub/" --release</code>), and deploys the <code>build/web</code> folder to GitHub Pages.</li>
+    </ul>
+  </div>
+
+  <div class="footer-note">
+    <em>Tip for exam: Write these 5 short headings directly in your answer booklet. They are concise, clear, and cover every required grading point.</em>
+  </div>
+
+</body>
+</html>
